@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :genres only: [:index, :show]
-  resources :artists only: [:index, :show, :create, :new]
+  resources :genres, only: [:index, :show]
+  resources :artists, only: [:index, :show, :create, :new]
 
   resources :playlists, to: [:index, :show]
   resources :users, to: [:index, :show]
