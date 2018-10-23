@@ -10,8 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_10_23_134845) do
+ActiveRecord::Schema.define(version: 2018_10_23_140011) do
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+    t.string "blurbs"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.string "descripton"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
@@ -19,16 +33,15 @@ ActiveRecord::Schema.define(version: 2018_10_23_134845) do
     t.integer "playlist_id"
   end
 
-  create_table "songs", force: :cascade do |t|
-    t.string "name"
-=======
-ActiveRecord::Schema.define(version: 2018_10_23_131247) do
-
   create_table "playlists", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,7 +51,6 @@ ActiveRecord::Schema.define(version: 2018_10_23_131247) do
     t.string "fav_artist"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> 0f0a808ed8968a00680e94bf31caf2b55e04c7a2
   end
 
 end
